@@ -391,6 +391,6 @@ with tab2:
                     """)
     
     link = "https://github.com/Bruno-Donato/cluster_desafio_tera/blob/main/desafio_cluster.ipynb"
-        text = "Análise Completa - Link"
-        markdown = f'<a href="{link}" target="_blank">{text}</a>'
-        st.markdown(markdown, unsafe_allow_html=True)
+    text = "Análise Completa - Link"
+    markdown = f'<a href="{link}" target="_blank">{text}</a>'
+    st.markdown(markdown, unsafe_allow_html=True)
