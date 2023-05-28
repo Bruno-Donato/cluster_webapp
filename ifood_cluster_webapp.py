@@ -44,8 +44,13 @@ st.write("""
          """)
 
 st.write("""
-         A análise feita com dados referente ao período de 20/02/2022
+         A análise feita com dados referente ao período de 20/02/2022.
          """)
+
+link = "https://github.com/Bruno-Donato/cluster_desafio_tera/blob/main/desafio_cluster.ipynb"
+text = "ANÁLISE COMPLETA - LINK"
+markdown = f'<a href="{link}" target="_blank">{text}</a>'
+st.markdown(markdown, unsafe_allow_html=True)
 
 st.markdown("""<div style='text-align: center;'><hr style='border-top: 5px solid black'></div>""", unsafe_allow_html=True)
 
@@ -389,8 +394,3 @@ with tab2:
                     - Período mais pedido: Almoço em dias úteis
                     - Prato mais pedido: Comida brasileira
                     """)
-    
-    link = "https://github.com/Bruno-Donato/cluster_desafio_tera/blob/main/desafio_cluster.ipynb"
-    text = "Análise Completa - Link"
-    markdown = f'<a href="{link}" target="_blank">{text}</a>'
-    st.markdown(markdown, unsafe_allow_html=True)
