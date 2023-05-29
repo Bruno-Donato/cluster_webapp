@@ -44,7 +44,7 @@ st.write("""
          """)
 
 st.write("""
-         A análise feita com dados referente ao período de 20/02/2022.
+         A análise feita com dados referente ao período de 20/02/2022 a 20/09/2022.
          """)
 
 link = "https://github.com/Bruno-Donato/cluster_desafio_tera/blob/main/desafio_cluster.ipynb"
