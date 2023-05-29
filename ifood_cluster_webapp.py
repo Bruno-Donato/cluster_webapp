@@ -6,11 +6,12 @@ import plotly.express as px
 pd.set_option('display.float_format', lambda x: '%.2f' % x)
 
 
-df_usuarios = pd.read_feather('data/df_usuarios.feather')
-df_loc = pd.read_feather('data/df_loc.feather')
+df_device = pd.read_feather('data/device.feather')
 df_clusters = pd.read_feather('data/df_clusters.feather')
+df_loc = pd.read_feather('data/df_loc.feather')
 df_mkt = pd.read_feather('data/df_mkt.feather')
 df_turno_pedido = pd.read_feather('data/df_turno_pedido.feather')
+df_usuarios = pd.read_feather('data/df_usuarios.feather')
 df_mais_pedidas = pd.read_feather('data/mais_pedidas.feather')
 
 
@@ -92,23 +93,20 @@ with tab1:
         st.metric(label = 'Receita', value = 'R$ 13.6 Bi')
 
 
-    col1, col2, col3 = st.columns([2.5, 2.5, 1])
+    col1, col2, col3 = st.columns([2, 3, 1])
     with col1:    
-        # MUDAR LEGENDA PARA PORTUGUES
-        df_status = df_mkt.groupby('ifood_status_last_month').size().to_frame().reset_index().sort_values(0, ascending=False)
-        df_status.rename(columns = {0 : 'contagem'}, inplace = True)
-        fig3 = px.bar(df_status, x = 'ifood_status_last_month', y = 'contagem', color = 'ifood_status_last_month')
-        
-        fig3.update_layout(
-            title="Status conta no mês anterior",
-            xaxis_title="",
-            yaxis_title="Contagem",
-            height = 300)
+        fig3 = px.bar(df_device, x = 'device_platform', y = 'count', hover_data = '%', color = 'device_platform')
         
         fig3.update(layout_showlegend=False)
 
-        col1.plotly_chart(fig3, use_container_width=True)
+        fig3.update_layout(
+            title='Dispositivo utilizado',
+            xaxis_title="",
+            yaxis_title="Contagem",
+            height = 300)
 
+        col1.plotly_chart(fig3, use_container_width=True)
+        
     with col2:    
         # MUDAR LEGENDA PARA PORTUGUES
         df_status = df_mkt.groupby('ifood_status').size().to_frame().reset_index().sort_values(0, ascending=False)
