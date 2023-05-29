@@ -86,7 +86,7 @@ with tab1:
         col2.plotly_chart(fig2, use_container_width=True)
 
     with col3:
-        st.metric(label = 'Total de Clientes', value = 20.249)
+        st.metric(label = 'Total de Clientes', value = 13.964)
         
         st.metric(label = 'Total de Pedidos', value = 226.269)
         
